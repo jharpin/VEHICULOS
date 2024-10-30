@@ -2,37 +2,73 @@ package co.edu.uniquindio.poo;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import co.edu.uniquindio.poo.model.Cliente;
+import co.edu.uniquindio.poo.model.Empresa;
+import co.edu.uniquindio.poo.viewController.ClienteViewController;
+import co.edu.uniquindio.poo.viewController.PrimaryController;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
 
-    private static Scene scene;
+    private Stage primaryStage;
+    public static Empresa empresa = new Empresa("UQ");
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("Gestion de Clientes");
+        openViewPrincipal();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+    private void openViewPrincipal() {
+        inicializarData();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("primary.fxml"));
+            javafx.scene.layout.VBox rootLayout = (javafx.scene.layout.VBox) loader.load();
+            PrimaryController primaryController = loader.getController();
+            primaryController.setApp(this);
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
         launch();
     }
 
+    public void openCrudCliente() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudCliente.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            ClienteViewController clienteViewController = loader.getController();
+            clienteViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    //servicios
+
+    public void inicializarData(){
+        Cliente cliente = new Cliente("12233", "juan", "apellido");
+        empresa.agregarCliente(cliente);
+    }
 }

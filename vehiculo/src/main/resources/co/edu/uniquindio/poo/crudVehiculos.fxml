@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.SistemaReservaController">
+    
+    <Label text="Registrar Vehículo y Reserva" />
+    
+    <TextField fx:id="campoMatricula" promptText="Matrícula" />
+    <TextField fx:id="campoMarca" promptText="Marca" />
+    <DatePicker fx:id="campoAnioFabricacion" />
+    
+    <ComboBox fx:id="campoTipoVehiculo">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Auto"/>
+                <String fx:value="Camioneta"/>
+                <String fx:value="Moto"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    
+    <TextField fx:id="campoCliente" promptText="Nombre del Cliente" />
+    <TextField fx:id="campoDiasReserva" promptText="Días de Reserva" />
+    
+    <Button text="Calcular Reserva" onAction="#calcularReserva" />
+    <Label fx:id="resultadoReserva" text="Total Reserva: " />
+
+</VBox>
