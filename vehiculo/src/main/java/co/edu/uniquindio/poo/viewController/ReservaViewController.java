@@ -129,10 +129,10 @@ public class reservaViewController {
     private void cargarDatosEnComboBoxes() {
         // Cargar clientes
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
-            new Cliente("Juan Perez", "312897654", null),
-            new Cliente("Ana Gomez", "311478900", null),
-            new Cliente("Laura Lopera", "3134568976", null),
-            new Cliente("Sara Bolaños", "300875432", null)
+            new Cliente("jean harwol", "3053517277", null),
+            new Cliente("cesar andres", "346316373", null),
+            new Cliente("juan chavez", "3241456242", null),
+            new Cliente("pepito ", "39282173320", null)
         );
         txtListaClientes.setItems(clientes);
     

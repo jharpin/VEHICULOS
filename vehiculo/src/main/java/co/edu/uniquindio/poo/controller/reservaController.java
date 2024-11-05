@@ -45,8 +45,8 @@ public class reservaController {
         // Cargar clientes desde el modelo (puedes tener una lista estática o de otro lugar)
         ObservableList<Cliente> clientes = FXCollections.observableArrayList();
         // Suponiendo que tienes algunos clientes
-        clientes.add(new Cliente("123456", "Juan Pérez", null));
-        clientes.add(new Cliente("789101", "Ana Gómez", null));
+        clientes.add(new Cliente("jean harwol", "3053517277", null));
+        clientes.add(new Cliente("cesar andres", "47326238328", null));
         txtListaClientes.setItems(clientes);
     }
 
