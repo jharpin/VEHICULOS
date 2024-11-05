@@ -141,7 +141,7 @@ public class reservaViewController {
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
             new Moto("ABC123", "Yamaha", "MT-07", 2020, 4, null, TipoCaja.AUTOMATICO),
             new Moto("DTF432", "ninja", "RT-05", 2019, 0, null, TipoCaja.MANUAL),
-            new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 1000, null),
+            new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 50, null),
             new Auto ("ABC123", "Chevrolet", "Spar", 2022,4, null),
             new Auto ("HGF675", "chevrolet", "captiva", 2023,6, null)
         );
