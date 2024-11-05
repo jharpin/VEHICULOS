@@ -2,8 +2,9 @@ package co.edu.uniquindio.poo.model;
 
 public class Camioneta extends Vehiculo{
     private double carga;
-    private Camioneta(String numeroplaca,String marca, String modelo, String local,double carga, double tarifaInicial){
-        super(numeroplaca, marca, modelo, local, tarifaInicial);
+
+    public Camioneta(String numeroplaca,String marca, String modelo, String local,double carga, double tarifaInicial){
+        super(numeroplaca, marca, modelo, local,tarifaInicial);
         this.carga=carga;
     }
 

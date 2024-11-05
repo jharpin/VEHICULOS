@@ -6,6 +6,8 @@ public class Auto extends Vehiculo {
     public Auto(String numeroplaca,String marca, String modelo, String local,int numeropuertas,double tarifaInicial,int dias){
         super(numeroplaca, marca, modelo, local, tarifaInicial);
         this.numeropuertas=numeropuertas;
+        this.dias=dias;
+
     }
 
     @Override
