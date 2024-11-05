@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Separator layoutX="-1.0" layoutY="69.0" prefHeight="8.0" prefWidth="740.0" />
+            <Separator disable="true" layoutX="369.0" layoutY="73.0" orientation="VERTICAL" prefHeight="424.0" prefWidth="6.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Separator>
+            <Label layoutX="265.0" layoutY="24.0" text="BIENVENIDO ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="115.0" layoutY="78.0" text="AGREGAR CLIENTE ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="467.0" layoutY="78.0" text="INICIE SU RESERVA">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombre" layoutX="31.0" layoutY="131.0" promptText="Nombre" />
+            <TextField fx:id="txtApellido" layoutX="210.0" layoutY="131.0" promptText="Apellido" />
+            <TextField fx:id="txtCedula" layoutX="31.0" layoutY="204.0" promptText="Cedula" />
+            <TextField fx:id="txtTelefono" layoutX="210.0" layoutY="204.0" promptText="Telefono" />
+            <TableView fx:id="tblListClientes" layoutX="-3.0" layoutY="297.0" prefHeight="200.0" prefWidth="367.0">
+              <columns>
+                <TableColumn fx:id="tbcNombre" prefWidth="75.0" text="NOMBRE" />
+                <TableColumn fx:id="tbcApellido" prefWidth="75.0" text="APELLIDO" />
+                  <TableColumn fx:id="tbcCedula" prefWidth="75.0" text="CEDULA" />
+                  <TableColumn fx:id="tbcTelefono" prefWidth="75.0" text="TELEFONO" />
+              </columns>
+            </TableView>
+            <Label layoutX="31.0" layoutY="114.0" text="Nombre" />
+            <Label layoutX="210.0" layoutY="114.0" text="Apellido" />
+            <Label layoutX="35.0" layoutY="187.0" text="Cedula" />
+            <Label layoutX="210.0" layoutY="179.0" prefHeight="17.0" prefWidth="56.0" text="Telefono" />
+            <Button fx:id="btnAgregar" layoutX="31.0" layoutY="249.0" mnemonicParsing="false" onAction="#onAgregarCliente" text="Agregar" />
+            <Button fx:id="txtEiminar" layoutX="115.0" layoutY="249.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+            <Button fx:id="btnLimpiar" layoutX="190.0" layoutY="249.0" mnemonicParsing="false" onAction="#onLimpiar" text="Limpiar" />
+            <Button fx:id="btnActualizar" layoutX="278.0" layoutY="249.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+            <Button layoutX="474.0" layoutY="248.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="138.0" text="INICIAR" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
