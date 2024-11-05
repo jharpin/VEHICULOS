@@ -1,60 +1,79 @@
 package co.edu.uniquindio.poo.model;
 
-public abstract class Vehiculo {
-    private String numeroplaca;
-    private String marca;
-    private String modelo;
-    private String local;
-    private double tarifaInicial;
+public class Vehiculo {
+    public String matricula;
+    public String marca;
+    public String modelo;
+    public int anoFabricacion;
+    public Reserva reserva;
 
-    public Vehiculo (String numeroplaca,String marca, String modelo, String local,double tarifaInicial){
-        this.numeroplaca = numeroplaca;
+
+    public Vehiculo(String matricula, String marca, String modelo, int anoFabricacion, Reserva reserva) {
+        this.matricula = matricula;
         this.marca = marca;
-        this.modelo= modelo;
-        this.local = local;
-        this.tarifaInicial=tarifaInicial;
+        this.modelo = modelo;
+        this.anoFabricacion = anoFabricacion;
+        this.reserva=reserva;
     }
 
-    public abstract double calcularReserva();
 
-    public String getNumeroplaca() {
-        return numeroplaca;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setNumeroplaca(String numeroplaca) {
-        this.numeroplaca = numeroplaca;
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
+
 
     public String getMarca() {
         return marca;
     }
 
+
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
 
     public String getModelo() {
         return modelo;
     }
 
+
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public String getLocal() {
-        return local;
+
+    public int getAnoFabricacion() {
+        return anoFabricacion;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
-    }
 
-    public double getTarifaInicial() {
-        return tarifaInicial;
-    }
-
-    public void setTarifaInicial(double tarifaInicial) {
-        this.tarifaInicial = tarifaInicial;
+    public void setAnoFabricacion(int anoFabricacion) {
+        this.anoFabricacion = anoFabricacion;
     }
     
+    public Reserva getReserva() {
+        return reserva;
+    }
+
+
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
+    }
+
+
+    @Override
+    public String toString() {
+        return " matricula " + matricula + " ,marca " + marca + " ,modelo " + modelo + " ,año Fabricacion "
+                + anoFabricacion;
+    }
+
+
+   
+    
 }
+

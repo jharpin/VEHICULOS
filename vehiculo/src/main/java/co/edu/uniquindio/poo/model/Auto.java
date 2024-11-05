@@ -1,32 +1,33 @@
 package co.edu.uniquindio.poo.model;
 
-public class Auto extends Vehiculo {
-    private int numeropuertas;
-    private int dias;
-    public Auto(String numeroplaca,String marca, String modelo, String local,int numeropuertas,double tarifaInicial,int dias){
-        super(numeroplaca, marca, modelo, local, tarifaInicial);
-        this.numeropuertas=numeropuertas;
-        this.dias=dias;
+public class Auto extends Vehiculo implements ICosto{
+    private int cantidadPuertas;
 
+    public Auto(String matricula, String marca, String modelo, int anoFabricacion, int cantidadPuertas, Reserva reserva) {
+        super(matricula, marca, modelo, anoFabricacion, reserva);
+        this.cantidadPuertas = cantidadPuertas;
+    }
+
+    public int getCantidadPuertas() {
+        return cantidadPuertas;
+    }
+
+    public void setCantidadPuertas(int cantidadPuertas) {
+        this.cantidadPuertas = cantidadPuertas;
+    }
+
+    //metodo del costo del auto
+    @Override
+    public double calcularCosto(){
+        double tarifaBase=40000;
+        double total=tarifaBase;
+        return total;
+        
     }
 
     @Override
-    public double calcularReserva(){
-        return getTarifaInicial()*getDias();
-     }
-    public int getNumeropuertas(){
-        return numeropuertas;
-    }
-    public void setNumeropuertas(int numeropuertas){
-        this.numeropuertas=numeropuertas;
-    }
-
-    public int getDias() {
-        return dias;
-    }
-
-    public void setDias(int dias) {
-        this.dias = dias;
+    public String toString(){
+        return "Auto: "+super.toString()+" ,cantidad puertas "+cantidadPuertas;  
     }
     
 }

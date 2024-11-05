@@ -1,27 +1,39 @@
 package co.edu.uniquindio.poo.model;
 
-public class Camioneta extends Vehiculo{
-    private double carga;
+public class Camioneta extends Vehiculo implements ICosto {
+    private double capacidadCarga;
 
-    public Camioneta(String numeroplaca,String marca, String modelo, String local,double carga, double tarifaInicial){
-        super(numeroplaca, marca, modelo, local,tarifaInicial);
-        this.carga=carga;
+    public Camioneta(String matricula, String marca, String modelo, int anoFabricacion, double capacidadCarga, Reserva reserva) {
+        super(matricula, marca, modelo, anoFabricacion, reserva);
+        this.capacidadCarga = capacidadCarga;
     }
 
+    public double getCapacidadCarga() {
+        return capacidadCarga;
+    }
+
+    public void setCapacidadCarga(double capacidadCarga) {
+        this.capacidadCarga = capacidadCarga;
+    }
+
+    //Metodo de costo de la camioneta
     @Override
-    public double calcularReserva(){
-        double porcentajeExtraPorTonelada = 0.10; 
-        
-        double costoExtra = getTarifaInicial() * (porcentajeExtraPorTonelada * carga);
-        
-        return getTarifaInicial() + costoExtra;
+    public double calcularCosto() {
+        double tarifaBase= 20000;
+        double porcentajeExtraPorTonelada= 0.05;
+        double adicional=tarifaBase*capacidadCarga*porcentajeExtraPorTonelada;
+        double total=tarifaBase+adicional;
+        return total;   
     }
 
-    public double getCarga() {
-        return carga;
+   @Override
+    public String toString(){
+        return "Camioneta: "+super.toString()+" ,capacidad carga "+ capacidadCarga;
     }
-    public void setCarga(double carga) {
-        this.carga = carga;
-    }
+ 
+    
+    
+
+    
     
 }
