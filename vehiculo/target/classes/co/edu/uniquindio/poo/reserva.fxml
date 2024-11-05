@@ -10,12 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.reservaViewController">
    <children>
-      <ImageView fitHeight="770.0" fitWidth="914.0" layoutX="31.0" layoutY="-95.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="756.0" fitWidth="1349.0" layoutX="-245.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../Desktop/mami/8-e1569521762425.png" />
+            <Image url="@Captura%20de%20pantalla%202024-11-05%20160027.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="136.0" layoutY="-5.0" prefHeight="112.0" prefWidth="677.0" text="INICIE SU RESERVA " textFill="#0089f8" textOverrun="LEADING_WORD_ELLIPSIS">
+      <Label layoutX="206.0" prefHeight="112.0" prefWidth="677.0" text="INICIE SU RESERVA " textFill="#0089f8" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -27,10 +27,13 @@
          <effect>
             <ColorAdjust saturation="0.24" />
          </effect></Separator>
-      <TextField fx:id="txtDiasReserva" layoutX="23.0" layoutY="290.0" prefHeight="31.0" prefWidth="240.0" promptText="Dias a reservar ">
+      <TextField fx:id="txtDiasReserva" layoutX="23.0" layoutY="290.0" opacity="0.61" prefHeight="31.0" prefWidth="240.0" promptText="Dias a reservar ">
          <effect>
             <DropShadow color="#5a5aff" />
-         </effect></TextField>
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
       <Label layoutX="24.0" layoutY="255.0" text="Dias a reservar:">
          <font>
             <Font name="Arial Black" size="23.0" />
@@ -75,12 +78,12 @@
             <DropShadow color="#5a5aff" />
          </effect>
       </Label>
-      <TableView fx:id="tabReserva" layoutX="50.0" layoutY="388.0" prefHeight="200.0" prefWidth="718.0">
+      <TableView fx:id="tabReserva" layoutX="110.0" layoutY="379.0" prefHeight="200.0" prefWidth="607.0">
         <columns>
           <TableColumn fx:id="columnCliente" prefWidth="75.0" text="Cliente" />
           <TableColumn fx:id="columnVehiculo" prefWidth="75.0" text="Vehiculo" />
-            <TableColumn fx:id="columnDiasReserva" prefWidth="119.0" text="Dias a reservar" />
-            <TableColumn fx:id="columnCosto" prefWidth="55.0" text="Costo" />
+            <TableColumn fx:id="columnDiasReserva" prefWidth="111.0" text="Dias a reservar" />
+            <TableColumn fx:id="columnCosto" prefWidth="366.0" text="Costo" />
         </columns>
          <effect>
             <DropShadow color="#5a5aff" />

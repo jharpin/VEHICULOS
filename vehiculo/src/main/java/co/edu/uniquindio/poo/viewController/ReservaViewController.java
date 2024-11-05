@@ -140,10 +140,35 @@ public class reservaViewController {
         // Cargar vehículos
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
             new Moto("ABC123", "Yamaha", "MT-07", 2020, 4, null, TipoCaja.AUTOMATICO),
-            new Moto("DTF432", "ninja", "RT-05", 2019, 0, null, TipoCaja.MANUAL),
-            new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 1000, null),
-            new Auto ("ABC123", "Chevrolet", "Spar", 2022,4, null),
-            new Auto ("HGF675", "chevrolet", "captiva", 2023,6, null)
+    new Moto("DTF432", "Kawasaki", "Ninja", 2019, 0, null, TipoCaja.MANUAL),
+    new Camioneta("XYZ789", "Toyota", "Prado", 2021, 10, null),
+    new Auto("ABC123", "Chevrolet", "Spark", 2022, 4, null),
+    new Auto("HGF675", "Chevrolet", "Captiva", 2023, 6, null),
+    
+    // Additional vehicles
+    new Moto("MOT001", "Honda", "CBR600RR", 2018, 0, null, TipoCaja.MANUAL),
+    new Moto("MOT002", "Ducati", "Monster", 2020, 1, null, TipoCaja.AUTOMATICO),
+    new Moto("MOT003", "BMW", "S1000RR", 2022, 1, null, TipoCaja.MANUAL),
+    new Moto("MOT004", "Suzuki", "Hayabusa", 2021, 1, null, TipoCaja.AUTOMATICO),
+    
+    new Camioneta("CAM001", "Ford", "Explorer", 2021, 7, null),
+    new Camioneta("CAM002", "Jeep", "Wrangler", 2020, 5, null),
+    new Camioneta("CAM003", "Hyundai", "Tucson", 2022, 5, null),
+    new Camioneta("CAM004", "Mazda", "CX-5", 2023, 5, null),
+    
+    new Auto("AUT001", "Toyota", "Corolla", 2020, 4, null),
+    new Auto("AUT002", "Honda", "Civic", 2021, 4, null),
+    new Auto("AUT003", "Mazda", "Mazda3", 2019, 4, null),
+    new Auto("AUT004", "Hyundai", "Elantra", 2023, 4, null),
+    new Auto("AUT005", "Volkswagen", "Golf", 2022, 4, null),
+    
+    new Auto("AUT006", "Ford", "Mustang", 2021, 2, null),
+    new Auto("AUT007", "Tesla", "Model 3", 2023, 4, null),
+    new Auto("AUT008", "BMW", "Serie 3", 2021, 4, null),
+    new Auto("AUT009", "Audi", "A4", 2020, 4, null),
+    new Auto("AUT010", "Mercedes", "Clase C", 2022, 4, null)
+            
+            
         );
         txtListaVehiculo.setItems(vehiculos);
     }
