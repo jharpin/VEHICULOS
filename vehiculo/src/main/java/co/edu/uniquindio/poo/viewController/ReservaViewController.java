@@ -129,16 +129,18 @@ public class reservaViewController {
     private void cargarDatosEnComboBoxes() {
         // Cargar clientes
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
-            new Cliente("Juan Perez", "312897654", null),
-            new Cliente("Ana Gomez", "311478900", null),
-            new Cliente("Laura Lopera", "3134568976", null),
-            new Cliente("Sara Bolaños", "300875432", null)
+            new Cliente("jean harwol", "3053517277", null),
+            new Cliente("cesar andres", "346316373", null),
+            new Cliente("juan chavez", "3241456242", null),
+            new Cliente("pepito ", "39282173320", null),
+            new Cliente("pedrito", "4376587632", null)
         );
         txtListaClientes.setItems(clientes);
     
         // Cargar vehículos
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
-            new Moto("ABC123", "Yamaha", "MT-07", 2020, 0, null, TipoCaja.AUTOMATICO),
+            new Moto("ABC123", "Yamaha", "MT-07", 2020, 4, null, TipoCaja.AUTOMATICO),
+            new Moto("DTF432", "ninja", "RT-05", 2019, 0, null, TipoCaja.MANUAL),
             new Camioneta("XYZ789", "Toyota", "Hilux", 2021, 1000, null),
             new Auto ("ABC123", "Chevrolet", "Spar", 2022,4, null),
             new Auto ("HGF675", "chevrolet", "captiva", 2023,6, null)
