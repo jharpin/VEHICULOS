@@ -112,7 +112,7 @@ public class reservaViewController {
         }
     });
 
-    
+    // Listener para el ComboBox de vehículos
     txtListaVehiculo.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
     if (newSelection != null) {
         try {
@@ -127,7 +127,7 @@ public class reservaViewController {
     }
 
     private void cargarDatosEnComboBoxes() {
-       
+        // Cargar clientes
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
             new Cliente("jean harwol", "3053517277", null),
             new Cliente("cesar andres", "346316373", null),
@@ -137,7 +137,7 @@ public class reservaViewController {
         );
         txtListaClientes.setItems(clientes);
     
-       
+        // Cargar vehículos
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
             new Moto("ABC123", "Yamaha", "MT-07", 2020, 4, null, TipoCaja.AUTOMATICO),
     new Moto("DTF432", "Kawasaki", "Ninja", 2019, 0, null, TipoCaja.MANUAL),
@@ -145,7 +145,7 @@ public class reservaViewController {
     new Auto("ABC123", "Chevrolet", "Spark", 2022, 4, null),
     new Auto("HGF675", "Chevrolet", "Captiva", 2023, 6, null),
     
-   
+    // Additional vehicles
     new Moto("MOT001", "Honda", "CBR600RR", 2018, 0, null, TipoCaja.MANUAL),
     new Moto("MOT002", "Ducati", "Monster", 2020, 1, null, TipoCaja.AUTOMATICO),
     new Moto("MOT003", "BMW", "S1000RR", 2022, 1, null, TipoCaja.MANUAL),
@@ -184,7 +184,7 @@ public class reservaViewController {
                 if (controller.crearReserva(dias, cliente, vehiculo)) {
                     txtCostoTotal.setText(String.valueOf(controller.calcularCosto(vehiculo)));
                     limpiarCampos();
-                    actualizarTablaReservas(); 
+                    actualizarTablaReservas(); // Actualiza la tabla tras crear la reserva
                     tabReserva.refresh();
                 } else {
                     System.out.println("No se pudo crear la reserva. Verifique los datos.");
