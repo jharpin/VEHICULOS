@@ -73,14 +73,14 @@ public class reservaViewController {
 
     private reservaController controller;
 
-    // Inicializa el controlador
+   
     public reservaViewController() {
         this.controller = new reservaController();
     }
 
     @FXML
     void initialize() {
-    // Asegurarse de que los elementos FXML fueron inyectados correctamente
+    
     assert columnCliente != null : "fx:id=\"columnCliente\" was not injected: check your FXML file 'reserva.fxml'.";
     assert btnLimpiar != null : "fx:id=\"btnLimpiar\" was not injected: check your FXML file 'reserva.fxml'.";
     assert tabReserva != null : "fx:id=\"tabReserva\" was not injected: check your FXML file 'reserva.fxml'.";
@@ -100,26 +100,26 @@ public class reservaViewController {
     columnVehiculo.setCellValueFactory(new PropertyValueFactory<>("vehiculo"));
     columnCosto.setCellValueFactory(new PropertyValueFactory<>("costo"));
 
-    // Cargar datos en los ComboBox
-    cargarDatosEnComboBoxes(); // Llama a este método para cargar datos
-    actualizarTablaReservas(); // Carga la tabla de reservas
+    
+    cargarDatosEnComboBoxes(); 
+    actualizarTablaReservas(); 
 
-     // Listener para el ComboBox de clientes
+    
      txtListaClientes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
         if (newSelection != null) {
-            // Si tienes un campo de texto para mostrar el nombre
-            // txtNombreCliente.setText(newSelection.getNombre());
+            
+            
         }
     });
 
-    // Listener para el ComboBox de vehículos
+    
     txtListaVehiculo.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
     if (newSelection != null) {
         try {
             txtCostoTotal.setText(String.valueOf(controller.calcularCosto(newSelection)));
         } catch (Exception e) {
             System.out.println("Error al calcular el costo: " + e.getMessage());
-            txtCostoTotal.setText("Error"); // Muestra un mensaje de error en el campo
+            txtCostoTotal.setText("Error"); 
         }
     }
     });
@@ -127,7 +127,7 @@ public class reservaViewController {
     }
 
     private void cargarDatosEnComboBoxes() {
-        // Cargar clientes
+       
         ObservableList<Cliente> clientes = FXCollections.observableArrayList(
             new Cliente("jean harwol", "3053517277", null),
             new Cliente("cesar andres", "346316373", null),
@@ -137,7 +137,7 @@ public class reservaViewController {
         );
         txtListaClientes.setItems(clientes);
     
-        // Cargar vehículos
+       
         ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList(
             new Moto("ABC123", "Yamaha", "MT-07", 2020, 4, null, TipoCaja.AUTOMATICO),
     new Moto("DTF432", "Kawasaki", "Ninja", 2019, 0, null, TipoCaja.MANUAL),
@@ -145,7 +145,7 @@ public class reservaViewController {
     new Auto("ABC123", "Chevrolet", "Spark", 2022, 4, null),
     new Auto("HGF675", "Chevrolet", "Captiva", 2023, 6, null),
     
-    // Additional vehicles
+   
     new Moto("MOT001", "Honda", "CBR600RR", 2018, 0, null, TipoCaja.MANUAL),
     new Moto("MOT002", "Ducati", "Monster", 2020, 1, null, TipoCaja.AUTOMATICO),
     new Moto("MOT003", "BMW", "S1000RR", 2022, 1, null, TipoCaja.MANUAL),
@@ -184,7 +184,7 @@ public class reservaViewController {
                 if (controller.crearReserva(dias, cliente, vehiculo)) {
                     txtCostoTotal.setText(String.valueOf(controller.calcularCosto(vehiculo)));
                     limpiarCampos();
-                    actualizarTablaReservas(); // Actualiza la tabla tras crear la reserva
+                    actualizarTablaReservas(); 
                     tabReserva.refresh();
                 } else {
                     System.out.println("No se pudo crear la reserva. Verifique los datos.");
@@ -204,7 +204,7 @@ public class reservaViewController {
             controller.eliminarReserva(reservaSeleccionada);
             actualizarTablaReservas();
         } else {
-            // Mostrar un mensaje de error al usuario
+            
         }
     }
 
@@ -212,11 +212,11 @@ public class reservaViewController {
     void actualizarAction(ActionEvent event) {
     Reserva reservaSeleccionada = tabReserva.getSelectionModel().getSelectedItem();
     if (reservaSeleccionada != null) {
-        // Validar y obtener los nuevos valores
+        
         String diasStr = txtDiasReserva.getText();
         if (diasStr.isEmpty() || !diasStr.matches("\\d+")) {
             System.out.println("Error: Ingrese un número válido para los días de reserva.");
-            return; // Salir del método si hay un error
+            return;
         }
 
         try {
@@ -226,14 +226,14 @@ public class reservaViewController {
 
             if (vehiculo == null || cliente == null) {
                 System.out.println("Error: Debe seleccionar un cliente y un vehículo.");
-                return; // Salir del método si hay un error
+                return; 
             }
 
-            // Actualizar la reserva
+            
             boolean exito = controller.actualizarReserva(reservaSeleccionada, dias, cliente, vehiculo);
             if (exito) {
-                // Actualizar la tabla y limpiar los campos
-                actualizarTablaReservas(); // Esto ya incluirá el nuevo costo
+                
+                actualizarTablaReservas();
                 limpiarCampos();
                 System.out.println("Reserva actualizada exitosamente.");
             } else {
@@ -261,8 +261,8 @@ public class reservaViewController {
     }
 
     private void actualizarTablaReservas() {
-        tabReserva.setItems(controller.getReservas()); // Asigna la lista actual a la tabla
-        tabReserva.refresh(); // Esto puede ayudar a actualizar la vista
+        tabReserva.setItems(controller.getReservas()); 
+        tabReserva.refresh(); 
     }
 
     public void setApp(App app){

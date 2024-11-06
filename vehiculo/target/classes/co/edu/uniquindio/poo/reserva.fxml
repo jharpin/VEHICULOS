@@ -10,6 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.reservaViewController">
    <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="756.0" fitWidth="1349.0" layoutX="-245.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Captura%20de%20pantalla%202024-11-05%20160027.jpg" />
@@ -34,7 +35,7 @@
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <Label layoutX="24.0" layoutY="255.0" text="Dias a reservar:">
+      <Label layoutX="14.0" layoutY="255.0" text="Dias a reservar:">
          <font>
             <Font name="Arial Black" size="23.0" />
          </font>
